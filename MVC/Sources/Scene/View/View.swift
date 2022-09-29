@@ -7,37 +7,38 @@
 
 import UIKit
 
-class MainView: UIView {
+final class MainView: UIView {
 
-// MARK: - UIElements
+    // MARK: - UIElements
 
-    private lazy var nameLabel: UILabel = {
+    let nameLabel: UILabel = {
         let nameLabel = UILabel()
-        nameLabel.layer.cornerRadius = 10
-        nameLabel.backgroundColor = .black
+        nameLabel.layer.cornerRadius = 20
+        nameLabel.textAlignment = .center
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameLabel
     }()
 
-    private lazy var tickerLabel: UILabel = {
+    let tickerLabel: UILabel = {
         let tickerLabel = UILabel()
-        tickerLabel.backgroundColor = .blue
+        tickerLabel.textAlignment = .center
         tickerLabel.translatesAutoresizingMaskIntoConstraints = false
         return tickerLabel
     }()
 
-    private lazy var valueLabel: UILabel = {
+    let valueLabel: UILabel = {
         let valueLabel = UILabel()
-        valueLabel.backgroundColor = .gray
+        valueLabel.textAlignment = .center
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         return valueLabel
     }()
 
-    private lazy var nameButton: UIButton = {
+    let nameButton: UIButton = {
         let nameButton = UIButton()
         nameButton.layer.cornerRadius = 20
         nameButton.backgroundColor = .yellow
-        nameButton.addTarget(self, action: #selector(addPressed), for: .touchUpInside)
+        nameButton.setTitle("Touch me", for: .normal)
+        nameButton.setTitleColor(.black, for: .normal)
         nameButton.translatesAutoresizingMaskIntoConstraints = false
         return nameButton
     }()
@@ -56,13 +57,6 @@ class MainView: UIView {
         setupHierarchy()
         setupLayout()
     }
-
-    // MARK: - Action
-
-    @objc func addPressed() {
-
-    }
-
 
     // MARK: - Setup
 
